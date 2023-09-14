@@ -9,5 +9,5 @@
 		<x-input-text name="description" wire:model.live="description" /> 
 	</div>	
  
-    <button type="submit" class="btn btn-primary">Save</button>
+    <button type="submit" class="btn btn-primary" wire:loading.class="opacity-50" wire:loading.attr="disabled">Save</button>
 </form>
