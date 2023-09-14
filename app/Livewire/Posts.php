@@ -6,6 +6,7 @@ use App\Models\Post;
 use Illuminate\Pagination\Paginator;
 use Livewire\Attributes\Computed;
 use Livewire\Attributes\Title;
+use Livewire\Attributes\Url;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -15,6 +16,7 @@ class Posts extends Component
 {
     use WithPagination;
 
+    #[Url] 
 	public $search;
 
 	#[Computed] 
