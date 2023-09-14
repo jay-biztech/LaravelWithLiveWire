@@ -12,7 +12,7 @@
 		    >
 		</div>
 
-		@foreach ($posts as $post)
+		@foreach ($this->posts as $post)
 			<div class="card mt-3" wire:key="{{ $post->id }}">
 			  <div class="card-body">
 			    <h5 class="card-title">{{ $post->title }}</h5>

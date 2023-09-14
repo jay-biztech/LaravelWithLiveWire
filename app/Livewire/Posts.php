@@ -3,6 +3,7 @@
 namespace App\Livewire;
 
 use App\Models\Post;
+use Livewire\Attributes\Computed;
 use Livewire\Attributes\Title;
 use Livewire\Component;
 
@@ -11,10 +12,10 @@ use Livewire\Component;
 class Posts extends Component
 {
 	public $search;
-	public $posts;
 
-	public function mount() {
-   		$this->posts = Post::get();
+	#[Computed] 
+	public function posts() {
+    	return Post::where('title', 'like', '%' . $this->search .'%')->get();
 	}
 
 	public function delete($id) {
@@ -29,8 +30,6 @@ class Posts extends Component
 
     public function render()
     {
-    	$this->posts = Post::where('title', 'like', '%' . $this->search .'%')->get();
-
-        return view('livewire.posts', ['posts' => $this->posts]);
+        return view('livewire.posts');
     }
 }
