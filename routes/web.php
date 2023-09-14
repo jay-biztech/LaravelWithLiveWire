@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Livewire\Counter;
+use App\Livewire\Posts;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,5 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('/posts', \App\Http\Controllers\PostController::class);
+// Route::resource('/posts', \App\Http\Controllers\PostController::class);
+Route::get('/posts', Posts::class);
+Route::get('/counter', Counter::class);
 
