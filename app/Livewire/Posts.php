@@ -17,16 +17,16 @@ class Posts extends Component
    		$this->posts = Post::get();
 	}
 
-	public function updatedSearch($newValue) {
-		if (strlen($newValue) > 2) {
-			$this->posts = Post::where('title', 'like', "%${newValue}%")->get();
-		} else {
-			$this->posts = Post::get();
-		}
+	public function delete($id) {
+        $post = Post::findOrFail($id);
+ 
+        $post->delete();
 	}
 
     public function render()
     {
-        return view('livewire.posts');
+    	$this->posts = Post::where('title', 'like', '%' . $this->search .'%')->get();
+
+        return view('livewire.posts', ['posts' => $this->posts]);
     }
 }
