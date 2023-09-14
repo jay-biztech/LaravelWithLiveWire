@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Livewire\Counter;
 use App\Livewire\Posts;
+use App\Livewire\CreatePost;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,5 +22,6 @@ Route::get('/', function () {
 
 // Route::resource('/posts', \App\Http\Controllers\PostController::class);
 Route::get('/posts', Posts::class);
+Route::get('/posts/create', CreatePost::class);
 Route::get('/counter', Counter::class);
 
