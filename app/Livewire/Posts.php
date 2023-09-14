@@ -3,19 +3,23 @@
 namespace App\Livewire;
 
 use App\Models\Post;
+use Illuminate\Pagination\Paginator;
 use Livewire\Attributes\Computed;
 use Livewire\Attributes\Title;
 use Livewire\Component;
+use Livewire\WithPagination;
 
 
 #[Title('All Posts')] 
 class Posts extends Component
 {
+    use WithPagination;
+
 	public $search;
 
 	#[Computed] 
 	public function posts() {
-    	return Post::where('title', 'like', '%' . $this->search .'%')->get();
+    	return Post::where('title', 'like', '%' . $this->search .'%')->latest()->paginate(10);
 	}
 
 	public function delete($id) {
@@ -26,6 +30,7 @@ class Posts extends Component
 
     public function render()
     {
+
         return view('livewire.posts');
     }
 }

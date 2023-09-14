@@ -22,5 +22,7 @@
 			  </div>
 			</div>
 		@endforeach
+
+		{{ $this->posts->links() }}
 	</div>
 </div>

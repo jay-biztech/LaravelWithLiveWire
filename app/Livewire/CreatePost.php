@@ -24,7 +24,7 @@ class CreatePost extends Component
             'description' => $this->description
         ]);
 
-        sleep(2);
+        sleep(1);
 
         session()->flash('message', 'Post created successfully!');
 
