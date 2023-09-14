@@ -19,13 +19,9 @@ class Posts extends Component
 	}
 
 	public function delete($id) {
-        $post = Post::findOrFail($id);
- 
-        $post->delete();
+        $post = Post::findOrFail($id)->delete();
 
         session()->flash('message', 'Post deleted successfully!');
-
-        return $this->redirect('/posts', navigate: true);
 	}
 
     public function render()
