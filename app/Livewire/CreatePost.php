@@ -2,16 +2,23 @@
 
 namespace App\Livewire;
 
-use Livewire\Component;
 use App\Models\Post;
+use Livewire\Attributes\Rule;
+use Livewire\Component;
 
 class CreatePost extends Component
 {
-	public $title;
-	public $description;
+    #[Rule('required|min:3')]
+    public $title;
+
+    #[Rule('required|min:10')]
+    public $description;
+
  
     public function save() 
     {
+        $this->validate();
+
         $post = Post::create([
             'title' => $this->title,
             'description' => $this->description
