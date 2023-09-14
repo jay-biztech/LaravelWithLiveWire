@@ -30,4 +30,20 @@ class CreatePostTest extends TestCase
             ->call('save')
             ->assertHasErrors(['title' => 'required', 'description' => 'required']);
     }
+
+    public function test_title_field_has_minimum_validation()
+    {
+        Livewire::test(CreatePost::class)
+            ->call('save')
+            ->set('title', '12')
+            ->assertHasErrors(['title' => 'min']);
+    }
+
+    public function test_description_field_has_minimum_validation()
+    {
+        Livewire::test(CreatePost::class)
+            ->call('save')
+            ->set('title', '12')
+            ->assertHasErrors(['title' => 'min']);
+    }
 }
