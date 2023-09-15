@@ -26,3 +26,7 @@
      ```sh
      php artisan migrate:fresh --seed
      ```
+  * Use below command for testing
+    ```sh
+    composer test
+    ```
