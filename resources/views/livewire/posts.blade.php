@@ -1,5 +1,5 @@
 <div>
-	<h1><center>All Posts</center></h1>
+	<livewire:post-count />
 
 	<livewire:create-post />
 
