@@ -26,6 +26,8 @@
      ```sh
      php artisan migrate:fresh --seed
      ```
+  * Need to set sqlite for database in phpunit.xml for Unit testing
+ 
   * Use below command for testing
     ```sh
     composer test
