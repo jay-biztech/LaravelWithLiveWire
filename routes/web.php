@@ -22,7 +22,7 @@ Route::get('/', function () {
 });
 
 Route::get('/posts', Posts::class);
-Route::get('/posts/{id}', PostDetail::class);
 Route::get('/posts/create', CreatePost::class);
+Route::get('/posts/{id}', PostDetail::class);
 Route::get('/counter', Counter::class);
 
