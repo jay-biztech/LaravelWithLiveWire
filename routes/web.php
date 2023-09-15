@@ -1,9 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use App\Livewire\Counter;
-use App\Livewire\Posts;
 use App\Livewire\CreatePost;
+use App\Livewire\PostDetail;
+use App\Livewire\Posts;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,8 +21,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::resource('/posts', \App\Http\Controllers\PostController::class);
 Route::get('/posts', Posts::class);
+Route::get('/posts/{id}', PostDetail::class);
 Route::get('/posts/create', CreatePost::class);
 Route::get('/counter', Counter::class);
 

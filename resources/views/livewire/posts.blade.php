@@ -15,7 +15,7 @@
 		@foreach ($this->posts as $post)
 			<div class="card mt-3" wire:key="{{ $post->id }}">
 			  <div class="card-body">
-			    <h5 class="card-title">{{ $post->title }}</h5>
+			    <h5 class="card-title"><a href="/posts/{{ $post->id }}" wire:navigate>{{ $post->title }}</a></h5>
 			    <p class="card-text">{{ $post->description }}</p>
 
 			    <button class="btn btn-danger" wire:click="delete({{ $post->id }})">Delete</button>
