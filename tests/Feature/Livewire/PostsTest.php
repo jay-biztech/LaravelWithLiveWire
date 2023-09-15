@@ -22,4 +22,10 @@ class PostsTest extends TestCase
         $this->get('/posts')
             ->assertSeeLivewire('create-post');
     }
+
+    public function test_main_page_contains_post_count_livewire_component()
+    {
+        $this->get('/posts')
+            ->assertSeeLivewire('post-count');
+    }
 }
