@@ -20,6 +20,10 @@
      ```sh
      php artisan db:seed
      ```
+6. Run the project
+     ```sh
+     php artisan serve
+     ```
 
 ### During Development
   * Migrate and Seed with fresh database
