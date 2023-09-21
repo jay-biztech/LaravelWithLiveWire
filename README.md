@@ -9,18 +9,23 @@
 ### Project setup
 1. Clone the project
 
-2. Setup database details in .env
+2. Install the dependencies 
+   ```
+   composer install
+   ```
 
-3. Migrate the database 
+4. Setup database details in .env
+
+5. Migrate the database 
      ```sh  
      php artisan migrate
      ```
 
-5. Seed the database
+6. Seed the database
      ```sh
      php artisan db:seed
      ```
-6. Run the project
+7. Run the project
      ```sh
      php artisan serve
      ```
